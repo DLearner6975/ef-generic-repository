@@ -1,0 +1,5 @@
+E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.dll
+E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.pdb
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.dll
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.pdb
