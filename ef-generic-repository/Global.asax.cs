@@ -13,6 +13,7 @@ namespace ef_generic_repository
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityConfig.RegisterComponents();
         }
     }
 }

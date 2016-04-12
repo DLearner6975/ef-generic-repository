@@ -15,37 +15,31 @@ namespace Core.Repository
         /// </summary>
         /// <param name="id">Identifier</param>
         /// <returns>Entity</returns>
-        Task<T> GetById(object id);
+        Task<T> GetByIdAsync(object id);
 
         /// <summary>
         /// Insert entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        Task Insert(T entity);
-
-        /// <summary>
-        /// Insert entity
-        /// </summary>
-        /// <param name="entity">Entity</param>
-        void InsertNotAsync(T entity);
+        Task InsertAsync(T entity);
 
         /// <summary>
         /// Update entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        Task Update(T entity);
+        Task UpdateAsync(T entity);
 
         /// <summary>
         /// Delete entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        Task Delete(T entity);
+        Task DeleteAsync(T entity);
 
         /// <summary>
         /// Delete All entities and specially used for deleting all the PastMedicalPatient
         /// </summary>
         /// <param name="entity"></param>
-        Task DeleteAll(List<T> entity);
+        Task DeleteAllAsync(List<T> entity);
 
 
         /// <summary>

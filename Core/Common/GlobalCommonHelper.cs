@@ -10,7 +10,7 @@ using System.Web;
 
 namespace Core.Common
 {
-    public class GlobalCommonHelper
+    public abstract class GlobalCommonHelper
     {
         /// <summary>
         /// Return SHA1 hash by specified string
@@ -33,6 +33,11 @@ namespace Core.Common
             return strResult;
         }
 
+        /// <summary>
+        /// Return a random password by specified length
+        /// </summary>
+        /// <param name="passwordLength">the length of password</param>
+        /// <returns>Auto generated password.</returns>
         public static string CreateRandomPassword(int passwordLength)
         {
             string allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789!@$?_-";

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Core.Repository
 {
     /// <summary>
-    /// Entity Framework repository
+    /// Entity Framework Generic Repository
     /// </summary>
     public partial class GenericRepository<T> : IRepository<T> where T : class
     {
@@ -30,7 +30,7 @@ namespace Core.Repository
         /// </summary>
         /// <param name="id">Identifier</param>
         /// <returns>Entity</returns>
-        public async virtual Task<T> GetById(object id)
+        public async virtual Task<T> GetByIdAsync(object id)
         {
             return await this.Entities.FindAsync(id);
         }
@@ -39,7 +39,7 @@ namespace Core.Repository
         /// Insert entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        public async virtual Task Insert(T entity)
+        public async virtual Task InsertAsync(T entity)
         {
             try
             {
@@ -59,46 +59,16 @@ namespace Core.Repository
                         msg += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
 
                 var fail = new Exception(msg, dbEx);
-                //Debug.WriteLine(fail.Message, fail);
                 throw fail;
             }
         }
 
-
-        /// <summary>
-        /// Insert entity
-        /// </summary>
-        /// <param name="entity">Entity</param>
-        public virtual void InsertNotAsync(T entity)
-        {
-            try
-            {
-                if (entity == null)
-                    throw new ArgumentNullException("entity");
-
-                this.Entities.Add(entity);
-
-                this._context.SaveChanges();
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                var msg = string.Empty;
-
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                        msg += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
-
-                var fail = new Exception(msg, dbEx);
-                //Debug.WriteLine(fail.Message, fail);
-                throw fail;
-            }
-        }
 
         /// <summary>
         /// Update entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        public async virtual Task Update(T entity)
+        public async virtual Task UpdateAsync(T entity)
         {
             try
             {
@@ -116,7 +86,6 @@ namespace Core.Repository
                         msg += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
 
                 var fail = new Exception(msg, dbEx);
-                //Debug.WriteLine(fail.Message, fail);
                 throw fail;
             }
         }
@@ -125,7 +94,7 @@ namespace Core.Repository
         /// Delete entity
         /// </summary>
         /// <param name="entity">Entity</param>
-        public async virtual Task Delete(T entity)
+        public async virtual Task DeleteAsync(T entity)
         {
             try
             {
@@ -145,7 +114,6 @@ namespace Core.Repository
                         msg += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
 
                 var fail = new Exception(msg, dbEx);
-                //Debug.WriteLine(fail.Message, fail);
                 throw fail;
             }
         }
@@ -176,7 +144,7 @@ namespace Core.Repository
         }
 
 
-        public async virtual Task DeleteAll(List<T> entity)
+        public async virtual Task DeleteAllAsync(List<T> entity)
         {
             try
             {
@@ -195,7 +163,7 @@ namespace Core.Repository
                         msg += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
 
                 var fail = new Exception(msg, dbEx);
-                //Debug.WriteLine(fail.Message, fail);
+               
                 throw fail;
             }
         }
