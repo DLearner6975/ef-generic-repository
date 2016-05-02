@@ -34,5 +34,9 @@ namespace ef_generic_repository.Controllers
         {
             return View(await _employeeService.GetAllEmployees());
         }
+        public async Task<ActionResult> Create()
+        {
+            return View();
+        }
 	}
 }
