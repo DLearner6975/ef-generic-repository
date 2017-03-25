@@ -1,12 +1,12 @@
+E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.dll.config
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.dll
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.pdb
-E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.dll
-E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.pdb
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Core.dll
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\EntityFramework.dll
+E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\EntityFramework.SqlServer.dll
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Core.pdb
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\EntityFramework.xml
-E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\Service.dll.config
-E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\EntityFramework.SqlServer.dll
 E:\Null Projects\Github\ef-generic-repository\Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.dll
+E:\Null Projects\Github\ef-generic-repository\Service\obj\Debug\Service.pdb
