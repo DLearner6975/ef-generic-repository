@@ -9,4 +9,3 @@ E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.dll
 E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.pdb
 E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.Migrations.InitialCreate.resources
 E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.csproj.GenerateResource.Cache
-E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

@@ -51,6 +51,7 @@
     <Compile Include="Common\GlobalCommonHelper.cs" />
     <Compile Include="Context\MyDbContext.cs" />
     <Compile Include="Data\Entities\Employee.cs" />
+    <Compile Include="Data\Mappings\EmployeeMapping.cs" />
     <Compile Include="Migrations\201604100733457_InitialCreate.cs" />
     <Compile Include="Migrations\201604100733457_InitialCreate.Designer.cs">
       <DependentUpon>201604100733457_InitialCreate.cs</DependentUpon>

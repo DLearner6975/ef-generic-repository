@@ -14,11 +14,9 @@ namespace Core.Data.Entities
         [Key]
         public int EmployeeID { get; set; }
 
-        [StringLength(255)]
         [Required(ErrorMessage = "Please enter first name.")]
         public string FirstName { get; set; }
 
-        [StringLength(255)]
         [Required(ErrorMessage = "Please enter last name.")]
         public string LastName { get; set; }
 

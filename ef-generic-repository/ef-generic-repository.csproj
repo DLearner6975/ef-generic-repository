@@ -106,11 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SampleDatabase.mdf" />
-    <Content Include="App_Data\SampleDatabase.mdf_log.ldf" />
-    <Content Include="App_Data\SampleDatabase_log.ldf">
-      <DependentUpon>SampleDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -145,6 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

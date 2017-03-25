@@ -1,4 +1,5 @@
 ﻿using Core.Data.Entities;
+using Core.Data.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,16 +13,23 @@ namespace Core.Context
     {
         public MyDbContext()
         {
+            Database.SetInitializer<MyDbContext>(null);
             this.Configuration.LazyLoadingEnabled = true;
         }
 
-        //=================  For Migration Purpose. Hide it for production use ============
+        
         public DbSet<Employee> Employees { get; set; }
 
-        //=================  For Migration Purpose. Hide it for production use ============
+        
         public new DbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
+        }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new EmployeeMapping());  
         }
 
     }
