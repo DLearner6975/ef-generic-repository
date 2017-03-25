@@ -38,12 +38,13 @@ namespace ef_generic_repository.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Create()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Employee employee)
         {
             if (ModelState.IsValid)
@@ -74,6 +75,7 @@ namespace ef_generic_repository.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(Employee employee, int id = 0)
         {
             if (ModelState.IsValid)
@@ -90,6 +92,7 @@ namespace ef_generic_repository.Controllers
                     eNew.Salary = employee.Salary;
 
                     await _employeeService.Update(eNew);
+                    return RedirectToAction("Index", "Home");
                 }
                 catch (Exception)
                 { 
@@ -98,6 +101,32 @@ namespace ef_generic_repository.Controllers
             }
 
             return View(employee);
+        }
+
+
+        [HttpGet]
+        public async Task<ActionResult> Details(int id = 0)
+        {
+            if (id == 0)
+                return HttpNotFound();
+
+            Employee employee = await _employeeService.GetEmployeeById(id);
+
+            return View(employee);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Delete(int id = 0)
+        {
+            if (id == 0)
+                return HttpNotFound();
+
+            Employee employee = await _employeeService.GetEmployeeById(id);
+
+           await _employeeService.Delete(employee);
+
+            return RedirectToAction("Index","Home");
         }
 
     }

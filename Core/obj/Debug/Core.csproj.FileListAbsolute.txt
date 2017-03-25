@@ -7,3 +7,5 @@ E:\Null Projects\Github\ef-generic-repository\Core\bin\Debug\EntityFramework.xml
 E:\Null Projects\Github\ef-generic-repository\Core\bin\Debug\EntityFramework.SqlServer.xml
 E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.dll
 E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.pdb
+E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.Migrations.remaning_functionlity.resources
+E:\Null Projects\Github\ef-generic-repository\Core\obj\Debug\Core.csproj.GenerateResource.Cache

@@ -9,22 +9,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create new employee</title>
     <style>
-        input[type='text'],input[type='number']{
-            width:200px;
+        input[type='text'], input[type='number'] {
+            width: 200px;
         }
     </style>
+
+    <title>Modify Employee</title>
 </head>
 <body>
 
     <div style="width:1024px; margin:0 auto;">
-        @using (Html.BeginForm("Create","Home",FormMethod.Post))
+        @using (Html.BeginForm("Edit","Home",FormMethod.Post))
         {
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>Employee</h4>
+                <h4>Modify Employee</h4>
                 <hr />
                 @Html.ValidationSummary(true)
 
@@ -78,7 +79,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="Update" class="btn btn-default" />
                     </div>
                 </div>
             </div>
@@ -87,6 +88,6 @@
         <div>
             @Html.ActionLink("Back to List", "Index")
         </div>
-        </div>
+    </div>
 </body>
 </html>
