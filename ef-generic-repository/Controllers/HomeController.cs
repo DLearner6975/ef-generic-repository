@@ -1,4 +1,5 @@
-﻿using Service.IService;
+﻿using Core.Data.Entities;
+using Service.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace ef_generic_repository.Controllers
         public HomeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
-           
+
         }
 
         #endregion
@@ -30,13 +31,74 @@ namespace ef_generic_repository.Controllers
 
 
         #endregion
+        [HttpGet]
         public async Task<ActionResult> Index()
         {
             return View(await _employeeService.GetAllEmployees());
         }
+
+        [HttpGet]
         public async Task<ActionResult> Create()
         {
             return View();
         }
-	}
+
+        [HttpPost]
+        public async Task<ActionResult> Create(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _employeeService.Insert(employee);
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (Exception)
+                {
+                    //Log Exception code
+                }
+            }
+
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Edit(int id = 0)
+        {
+            if (id == 0)
+                return HttpNotFound();
+
+            Employee employee = await _employeeService.GetEmployeeById(id);
+
+            return View(employee);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(Employee employee, int id = 0)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Employee eNew = await _employeeService.GetEmployeeById(id);
+
+                    eNew.FirstName = employee.FirstName;
+                    eNew.LastName = employee.LastName;
+                    eNew.Address = employee.Address;
+                    eNew.Age = employee.Age;
+                    eNew.Designation = employee.Designation;
+                    eNew.Salary = employee.Salary;
+
+                    await _employeeService.Update(eNew);
+                }
+                catch (Exception)
+                { 
+                    //Log Exception Code
+                }
+            }
+
+            return View(employee);
+        }
+
+    }
 }
