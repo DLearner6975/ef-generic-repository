@@ -52,6 +52,11 @@
     <Compile Include="Context\MyDbContext.cs" />
     <Compile Include="Data\Entities\Employee.cs" />
     <Compile Include="Data\Mappings\EmployeeMapping.cs" />
+    <Compile Include="Migrations\201703251349236_remaning_functionlity.cs" />
+    <Compile Include="Migrations\201703251349236_remaning_functionlity.Designer.cs">
+      <DependentUpon>201703251349236_remaning_functionlity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -59,6 +64,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703251349236_remaning_functionlity.resx">
+      <DependentUpon>201703251349236_remaning_functionlity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

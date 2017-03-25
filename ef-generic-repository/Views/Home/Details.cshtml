@@ -1,0 +1,102 @@
+﻿@model Core.Data.Entities.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Employee Details</title>
+</head>
+<body>
+    <div>
+        <h4>Employee Information</h4>
+        <hr />
+        
+
+
+        <table class="table" border="1" cellpadding="5" cellspacing="5" width="100%">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                   Value
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                   First Name
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FirstName)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.LastName)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Address)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Age
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Age)
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    Designation
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Designation)
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    Salary
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Salary)
+                </td>
+            </tr>
+
+           
+
+           
+
+
+
+        </table>
+
+    
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
