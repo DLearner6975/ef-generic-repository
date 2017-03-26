@@ -20,3 +20,6 @@ An asynchronous Generic Repository Pattern for MVC with Service Layer and Depend
 **Project Name:** ef-generic-repository <br />
 **Project Type:** MVC Web Project <br />
 **Description:** This is our MVC project which consuming above both projects. We are creating instance of services by using Unity Dependency Injection container. The constructor injection is used on controllers. I written simple CRUD operations for employee class. It will give basic idea how to use the architecture. All calls are async supports
+
+# Note:
+If you find some improvement needed to make it more effective and scalable. Please feel free to contribute on it. Your help is much appreciated for the .NET world.
